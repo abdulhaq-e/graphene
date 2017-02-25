@@ -16,6 +16,8 @@ class Options(object):
             )
 
         meta_attrs = props(meta) if meta else {}
+
+        # set attributes from meta_attrs or if not found from default
         for attr_name, value in defaults.items():
             if attr_name in meta_attrs:
                 value = meta_attrs.pop(attr_name)
